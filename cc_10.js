@@ -53,3 +53,29 @@ console.log(order1.getOrderDetails());
 
 console.log(prod1.getDetails()); 
 // Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 5" (Stock reduced)
+
+
+// Task 3: Creating an Inventory Class
+
+class Inventory {
+    constructor() {
+        this.products = []; 
+    };
+
+    addProduct(product) { 
+        //Adds a new product to inventory
+        this.products.push(product); 
+    };
+
+    listProducts() { 
+        //Logs all products' details.
+        return this.products.forEach(product => console.log(product.getDetails()));
+    };
+
+   
+};
+
+const inventory = new Inventory(); //Test case for Task 3
+inventory.addProduct(prod1);
+inventory.listProducts();
+// Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 5"
